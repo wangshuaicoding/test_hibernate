@@ -1,6 +1,7 @@
 package com.shuai.service;
 
-import com.shuai.domain.LoginRecord;
+import com.shuai.domain.po.LoginRecord;
+import com.shuai.domain.vo.LoginRecordVO;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface ILoginRecordService {
     List<LoginRecord> queryLoginRecordList();
 
     List<LoginRecord> queryLoginRecordByUserId(Long userId);
+
+    List<LoginRecordVO> queryLoginRecordByUserIdMp(Long userId);
 }

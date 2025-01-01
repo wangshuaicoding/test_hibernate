@@ -1,6 +1,6 @@
-package com.shuai.dao;
+package com.shuai.repository;
 
-import com.shuai.domain.LoginRecord;
+import com.shuai.domain.po.LoginRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +15,7 @@ import java.util.List;
  * @since 2025-01-01
  */
 @Repository
-public interface LoginRecordDao extends JpaRepository<LoginRecord, Long> {
+public interface LoginRecordRepository extends JpaRepository<LoginRecord, Long> {
 
     List<LoginRecord> queryLoginRecordByUserId(Long userId);
 }

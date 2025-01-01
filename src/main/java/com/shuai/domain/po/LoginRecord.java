@@ -1,4 +1,4 @@
-package com.shuai.domain;
+package com.shuai.domain.po;
 
 import lombok.Data;
 
@@ -27,48 +27,48 @@ public class LoginRecord implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    // @Column(name = "id", nullable = false)
     private Long id;
 
     /**
      * 用户id
      */
-    @Column(name = "user_id")
+    // @Column(name = "user_id")
     private Long userId;
 
     /**
      * 手机号码
      */
-    @Column(name = "cell_phone")
+    // @Column(name = "cell_phone")
     private String cellPhone;
 
     /**
      * 登录时间
      */
-    @Column(name = "login_time")
+    // @Column(name = "login_time")
     private LocalDateTime loginTime;
 
     /**
      * 登出时间
      */
-    @Column(name = "logout_time")
+    // @Column(name = "logout_time")
     private LocalDateTime logoutTime;
 
     /**
      * 登录日期
      */
-    @Column(name = "login_date")
+    // @Column(name = "login_date")
     private LocalDate loginDate;
 
     /**
      * 登录时长，单位是秒
      */
-    @Column(name = "duration")
+    // @Column(name = "duration")
     private Long duration;
 
     /**
      * ip地址
      */
-    @Column(name = "ipv4")
+    // @Column(name = "ipv4")
     private String ipv4;
 }

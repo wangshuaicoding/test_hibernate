@@ -1,10 +1,12 @@
 package com.shuai.controller;
 
 
-import com.shuai.domain.LoginRecord;
+import com.shuai.domain.po.LoginRecord;
+import com.shuai.domain.vo.LoginRecordVO;
 import com.shuai.service.ILoginRecordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,8 +32,14 @@ public class LoginRecordController {
         return loginRecordService.queryLoginRecordList();
     }
 
-    @GetMapping("userId")
-    public List<LoginRecord> queryLoginRecordByUserId(Long userId){
+    @GetMapping("/{userId}")
+    public List<LoginRecord> queryLoginRecordByUserId(@PathVariable("userId") Long userId){
         return loginRecordService.queryLoginRecordByUserId(userId);
+    }
+
+    // 测试MapStruct映射
+    @GetMapping("/mp/{userId}")
+    public List<LoginRecordVO> queryLoginRecordByUserIdMp(@PathVariable("userId") Long userId){
+        return loginRecordService.queryLoginRecordByUserIdMp(userId);
     }
 }
