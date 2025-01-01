@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    #当写的实体类中属性，如果对应表没有该属性的字段，会自动创建一个该属性的字段，规则是属性中大写字母处变成_小写字母的字段，比如userName变成user_name
+    hibernate:
+      # 这个配置会告诉 Hibernate 在启动时根据实体类自动更新数据库模式（schema）。如果检测到数据库中不存在某些表或字段，它会自动创建。
+      # update是默认行为，设置为 validate 或 none，以防止 Hibernate 自动创建或更新表结构。
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        new_generator_mappings: false
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3307/shuai_auth?serverTimezone=UTC
+
